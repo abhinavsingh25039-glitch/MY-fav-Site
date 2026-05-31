@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhinav Singh | Personal Dashboard</title>
+  <meta name="description" content="A fast, modern personal dashboard for Abhinav Singh with clean navigation, quick search, and responsive layout." />
+  <meta name="theme-color" content="#111827" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="style/home.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <div class="avatar-shell">
+        <img src="assets/ID-photo.png" alt="Abhinav Singh profile photo" loading="lazy" />
+      </div>
+      <div class="sidebar-text">
+        <p class="sidebar-name">Abhinav Singh</p>
+        <p class="sidebar-role">Account Holder</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Primary">
+      <a href="home.html" class="nav-link active">Home</a>
+      <a href="introduction.html" class="nav-link">Introduction</a>
+    </nav>
+  </aside>
+
+  <div class="content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="account-card">
+          <div class="account-image">
+            <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
+          </div>
+          <div class="account-info">
+            <p class="account-name">Abhinav Singh</p>
+            <p class="account-label">Account Holder</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar-center">
+        <label class="sr-only" for="search-input">Search</label>
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            id="search-input"
+            class="search-input"
+            type="search"
+            placeholder="Search anything (Github, Note, Gmail)"
+            aria-label="Search dashboard" />
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button class="icon-button" type="button" aria-label="Notifications">
+          <i class="fa-regular fa-bell"></i>
+        </button>
+        <button class="icon-button" type="button" id="theme-btn" aria-label="Toggle theme">
+          <i class="fa-regular fa-sun" id="theme-icon"></i>
+        </button>
+        <a class="profile-link" href="introduction.html" aria-label="View profile">
+          <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
+        </a>
+      </div>
+    </header>
+
+    <main class="main-section">
+      <section class="hero">
+        <p class="eyebrow">Welcome back</p>
+        <h1>Modern Personal Dashboard</h1>
+        <p class="hero-copy">
+          Organized left navigation, fast loading performance, and a clean color system for better readability.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script/home.js" defer></script>
+</body>
+</html>
