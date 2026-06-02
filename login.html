@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Workshop</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <aside class="side-image">
+        <img src="assets/Login.png" alt="Workshop">
+    </aside>
+    <div class="content">
+        <header>
+            <nav class="nav-bar-btn">
+                <button id="loginBtn">Login</button>
+                <button id="registerBtn">Register</button>
+            </nav>
+        </header>
+        <main>
+            <form id="loginForm" class="card">
+                <h2>Login</h2>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Email">
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Password">
+                <button type="submit">
+                    Login
+                </button>
+            </form>
+            <form
+                id="registerForm"
+                class="card hidden">
+                <h2>Create Account</h2>
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Full Name">
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email">
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Phone Number">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password">
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm Password">
+                <button type="submit">
+                    Register
+                </button>
+            </form>
+        </main>
+    </div>
+    <script src="script/auth.js"></script>
+</body>
+</html>
