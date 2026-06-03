@@ -22,7 +22,7 @@
         <img src="assets/ID-photo.png" alt="Abhinav Singh profile photo" loading="lazy" />
       </div>
       <div class="sidebar-text">
-        <p class="sidebar-name">Abhinav Singh</p>
+        <p class="sidebar-name" id="sidebarName">Loading...</p>
         <p class="sidebar-role">Account Holder</p>
       </div>
     </div>
@@ -41,7 +41,7 @@
             <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
           </div>
           <div class="account-info">
-            <p class="account-name">Abhinav Singh</p>
+            <p class="account-name" id="accountName">Loading...</p>
             <p class="account-label">Account Holder</p>
           </div>
         </div>
@@ -86,5 +86,18 @@
   </div>
 
   <script src="script/home.js" defer></script>
+  <script>
+    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+
+    if (!currentUser) {
+      window.location.href = "login.html";
+    } else {
+      const sidebarName = document.getElementById("sidebarName");
+      const accountName = document.getElementById("accountName");
+
+      if (sidebarName) sidebarName.textContent = currentUser.name || "User";
+      if (accountName) accountName.textContent = currentUser.name || "User";
+    }
+  </script>
 </body>
 </html>
