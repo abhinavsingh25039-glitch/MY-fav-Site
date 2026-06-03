@@ -13,52 +13,49 @@
     <div class="content">
         <header>
             <nav class="nav-bar-btn">
-                <button id="loginBtn">Login</button>
-                <button id="registerBtn">Register</button>
+                <button id="loginBtn" class="log-btn">Login</button>
+                <button id="registerBtn" class="reg-btn">Register</button>
             </nav>
         </header>
         <main>
             <form id="loginForm" class="card">
-                <h2>Login</h2>
-                <input
-                    type="email"
-                    id="loginEmail"
-                    placeholder="Email">
-                <input
-                    type="password"
-                    id="loginPassword"
-                    placeholder="Password">
-                <button type="submit">
-                    Login
-                </button>
+                <div class="form-top">
+                    <h2>Login Your account</h2>
+                    <p class="subtext">Welcome back! Sign in to continue your journey.</p>
+                </div>
+
+                <input type="email" id="loginEmail" placeholder="Username / Gmail" autocomplete="email">
+                <input type="password" id="loginPassword" placeholder="Enter Your Passward" autocomplete="current-password">
+
+                <label class="show-pass">
+                    <input type="checkbox" id="showLoginPassword"> Show password
+                </label>
+
+                <div class="helper-row">
+                    <button type="button" id="goToRegister" class="text-link">Create an account</button>
+                    <button type="button" id="forgotPasswordLink" class="text-link">Forgot password?</button>
+                </div>
+
+                <button type="submit">Login</button>
             </form>
-            <form
-                id="registerForm"
-                class="card hidden">
+
+            <form id="registerForm" class="card hidden">
                 <h2>Create Account</h2>
-                <input
-                    type="text"
-                    id="fullName"
-                    placeholder="Full Name">
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Email">
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Phone Number">
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password">
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    placeholder="Confirm Password">
-                <button type="submit">
-                    Register
-                </button>
+                <input type="text" id="fullName" placeholder="Full Name">
+                <input type="email" id="email" placeholder="Email">
+                <input type="tel" id="phone" placeholder="Phone Number">
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+
+                <label class="show-pass">
+                    <input type="checkbox" id="showRegisterPassword"> Show password
+                </label>
+
+                <div class="helper-row">
+                    <button type="button" id="goToLogin" class="text-link">I already have an account</button>
+                </div>
+
+                <button type="submit">Register</button>
             </form>
         </main>
     </div>
