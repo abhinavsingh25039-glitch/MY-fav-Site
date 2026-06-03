@@ -10,11 +10,7 @@ const goToLogin = document.getElementById("goToLogin");
 const showLoginPassword = document.getElementById("showLoginPassword");
 const showRegisterPassword = document.getElementById("showRegisterPassword");
 
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-if (currentUser) {
-    window.location.href = "home.html";
-}
+const logoutBtn = document.getElementById("logoutBtn");
 
 function showForm(mode) {
     const isLogin = mode === "login";
@@ -78,11 +74,16 @@ showForm("login");
 registerForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const name = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("phone").value;
+    const name = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!name || !email || !password) {
+        alert("Please fill all required fields.");
+        return;
+    }
 
     if (password !== confirmPassword) {
         alert("Passwords do not match");
@@ -90,7 +91,7 @@ registerForm.addEventListener("submit", function (e) {
     }
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
-    const exists = users.find(user => user.email === email);
+    const exists = users.find(user => user.email.toLowerCase() === email.toLowerCase());
 
     if (exists) {
         alert("Email already exists");
@@ -116,11 +117,11 @@ registerForm.addEventListener("submit", function (e) {
 loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.getElementById("loginEmail").value;
+    const email = document.getElementById("loginEmail").value.trim();
     const password = document.getElementById("loginPassword").value;
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(u => u.email === email && u.password === password);
+    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
 
     if (!user) {
         alert("Invalid Login");
@@ -129,4 +130,9 @@ loginForm.addEventListener("submit", function (e) {
 
     localStorage.setItem("currentUser", JSON.stringify(user));
     window.location.href = "home.html";
+});
+
+logoutBtn?.addEventListener("click", () => {
+  localStorage.removeItem("currentUser");
+  window.location.replace("login.html");
 });

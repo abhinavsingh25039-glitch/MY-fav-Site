@@ -22,7 +22,7 @@
         <img src="assets/ID-photo.png" alt="Abhinav Singh profile photo" loading="lazy" />
       </div>
       <div class="sidebar-text">
-        <p class="sidebar-name" id="sidebarName">Loading...</p>
+        <p class="sidebar-name" id="sidebarName">User</p>
         <p class="sidebar-role">Account Holder</p>
       </div>
     </div>
@@ -41,7 +41,7 @@
             <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
           </div>
           <div class="account-info">
-            <p class="account-name" id="accountName">Loading...</p>
+            <p class="account-name" id="accountName">User</p>
             <p class="account-label">Account Holder</p>
           </div>
         </div>
@@ -70,7 +70,9 @@
         <a class="profile-link" href="introduction.html" aria-label="View profile">
           <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
         </a>
-        <button id="logoutBtn" class="log-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        <button id="logoutBtn" class="log-btn" type="button" aria-label="Logout">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
       </div>
     </header>
 
@@ -87,17 +89,28 @@
 
   <script src="script/home.js" defer></script>
   <script>
-    const currentUser = JSON.parse(localStorage.getItem("currentUser") || "null");
+    (function () {
+      function getCurrentUser() {
+        try {
+          return JSON.parse(localStorage.getItem("currentUser") || "null");
+        } catch (e) {
+          return null;
+        }
+      }
 
-    if (!currentUser) {
-      window.location.href = "login.html";
-    } else {
+      const currentUser = getCurrentUser();
+
+      if (!currentUser) {
+        window.location.replace("./login.html");
+        return;
+      }
+
       const sidebarName = document.getElementById("sidebarName");
       const accountName = document.getElementById("accountName");
 
       if (sidebarName) sidebarName.textContent = currentUser.name || "User";
       if (accountName) accountName.textContent = currentUser.name || "User";
-    }
+    })();
   </script>
 </body>
 </html>
