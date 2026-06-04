@@ -36,6 +36,9 @@ body {
 	align-items: center;
 	padding: 40px;
 	background: #ffffff;
+	position: relative;
+	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 /* NAV BUTTONS */
@@ -73,7 +76,7 @@ body {
 /* FORM CARD */
 
 .card {
-	width: 450px;
+	width: min(420px, 100%);
 	max-width: 420px;
 	background: white;
 	padding: 12px 24px;
@@ -84,6 +87,7 @@ body {
 	justify-content: space-evenly;
 	flex-direction: column;
 	gap: 15px;
+	padding: 14px 18px;
 }
 
 .login-icon,
@@ -320,4 +324,11 @@ body {
 	display: block;
 	width: 100%;
 	margin-bottom: 6px;
+}
+
+header {
+  position: absolute;
+  top: 18px;
+  left: 30px;
+  z-index: 5;
 }

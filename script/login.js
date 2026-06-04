@@ -14,3 +14,5 @@ registerBtn.onclick = () =>{
     loginForm.classList.add("hidden");
 }
 
+
+

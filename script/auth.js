@@ -23,10 +23,25 @@ function showForm(mode) {
   registerForm.classList.toggle("hidden", isLogin);
 }
 
-loginBtn.addEventListener("click", () => showForm("login"));
-registerBtn.addEventListener("click", () => showForm("register"));
-goToRegister?.addEventListener("click", () => showForm("register"));
-goToLogin?.addEventListener("click", () => showForm("login"));
+loginBtn.addEventListener("click", () => {
+  setHeaderPosition();
+  showForm("login");
+});
+
+registerBtn.addEventListener("click", () => {
+  setHeaderPosition();
+  showForm("register");
+});
+
+goToRegister?.addEventListener("click", () => {
+  setHeaderPosition();
+  showForm("register");
+});
+
+goToLogin?.addEventListener("click", () => {
+  setHeaderPosition();
+  showForm("login");
+});
 
 showLoginPassword?.addEventListener("change", () => {
   const passwordField = document.getElementById("loginPassword");
@@ -173,3 +188,12 @@ loginForm.addEventListener("submit", function (e) {
   localStorage.setItem("currentUser", JSON.stringify(user));
   window.location.href = "home.html";
 });
+
+function setHeaderPosition() {
+  const header = document.querySelector("header");
+  if (header) {
+    header.style.position = "absolute";
+    header.style.top = "18px";
+    header.style.left = "30px";
+  }
+}
