@@ -17,13 +17,16 @@ body {
 	width: 50%;
 	height: 100vh;
 	overflow: hidden;
-	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .side-image img {
+	height: 100%;
+	width: 100%;
 	object-fit: cover;
 	object-position: center;
-	display: block;
 }
 
 /* RIGHT CONTENT SECTION */
