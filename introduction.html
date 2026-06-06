@@ -1,189 +1,210 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Introduction | Web Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction | Web Developer</title>
 
-		<link rel="stylesheet" href="style/introduction.css" />
+    <link rel="stylesheet" href="style/introduction.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script/introduction.js" defer></script>
+  </head>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet" />
-	</head>
+  <body>
+    <section class="hero">
+      <nav class="navbar">
+        <div class="logo">Abhinav</div>
 
-	<body>
-		<!-- HERO SECTION -->
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-		<section class="hero">
-			<nav class="navbar">
-				<div class="logo">Abhinav</div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="top-text">MODERN DIGITAL EXPERIENCE</p>
+          <h1>Building Smart & Creative Web Solutions</h1>
+          <p class="hero-description">
+            We create modern, responsive, and user-friendly digital experiences
+            focused on clean design, smooth performance, and interactive web
+            solutions.
+          </p>
 
-				<ul class="nav-links">
-					<li><a href="home.html">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</nav>
+          <div class="hero-buttons">
+            <button class="primary-btn">Explore More</button>
+            <button class="secondary-btn">Get Started</button>
+          </div>
+        </div>
 
-			<div class="hero-container">
-				<div class="hero-content">
-					<p class="top-text">MODERN DIGITAL EXPERIENCE</p>
+        <div class="hero-image">
+          <div class="image-box">
+            <h2>Creative UI</h2>
+          </div>
+        </div>
+      </div>
+    </section>
 
-					<h1>Building Smart & Creative Web Solutions</h1>
+    <section class="about">
+      <div class="section-title">
+        <h2>About Us</h2>
+        <p>Creating digital experiences with creativity and modern technologies.</p>
+      </div>
 
-					<p class="hero-description">
-						We create modern, responsive, and user-friendly digital experiences
-						focused on clean design, smooth performance, and interactive web
-						solutions.
-					</p>
+      <div class="about-container">
+        <div class="about-card">
+          <h3>Modern Design</h3>
+          <p>Clean and attractive UI with smooth layout and responsive structure.</p>
+        </div>
+        <div class="about-card">
+          <h3>Responsive Layout</h3>
+          <p>Optimized for desktop, tablet, and mobile with modern styling.</p>
+        </div>
+        <div class="about-card">
+          <h3>Fast Performance</h3>
+          <p>Lightweight and optimized structure focused on better performance.</p>
+        </div>
+      </div>
+    </section>
 
-					<div class="hero-buttons">
-						<button class="primary-btn">Explore More</button>
-						<button class="secondary-btn">Get Started</button>
-					</div>
-				</div>
+    <main class="about-main">
+      <div class="about-main__text">
+        <p class="eyebrow">My Approach</p>
+        <h2>Clean design, strong purpose</h2>
+        <p>
+          I focus on creating simple, modern, and functional web experiences
+          that feel professional and easy to use. This section reflects my
+          growth as a frontend learner and my effort to build websites with
+          clarity, structure, and personality.
+        </p>
+      </div>
 
-				<div class="hero-image">
-					<div class="image-box">
-						<h2>Creative UI</h2>
-					</div>
-				</div>
-			</div>
-		</section>
+      <div class="about-main__photo">
+        <img src="assets/ID-photo.png" alt="Abhinav Singh" />
+      </div>
+    </main>
 
-		<!-- ABOUT SECTION -->
+    <section class="services">
+      <div class="section-title">
+        <h2>Our Services</h2>
+      </div>
 
-		<section class="about">
-			<div class="section-title">
-				<h2>About Us</h2>
-				<p>
-					Creating digital experiences with creativity and modern technologies.
-				</p>
-			</div>
+      <div class="services-container">
+        <div class="service-box">
+          <h3>Web Development</h3>
+          <p>Modern and responsive websites with clean structure.</p>
+        </div>
+        <div class="service-box">
+          <h3>UI / UX Design</h3>
+          <p>Interactive and attractive user experience design.</p>
+        </div>
+        <div class="service-box">
+          <h3>Dashboard Design</h3>
+          <p>Professional admin and user dashboard interfaces.</p>
+        </div>
+      </div>
+    </section>
 
-			<div class="about-container">
-				<div class="about-card">
-					<h3>Modern Design</h3>
-					<p>
-						Clean and attractive user interface with smooth layout and
-						responsive structure.
-					</p>
-				</div>
+    <section class="projects" id="projects">
+      <div class="section-title">
+        <h2>My Projects</h2>
+        <p>Click the button to expand the full portfolio list. Each project opens its own page.</p>
+      </div>
 
-				<div class="about-card">
-					<h3>Responsive Layout</h3>
-					<p>
-						Optimized for desktop, tablet, and mobile devices with modern
-						styling.
-					</p>
-				</div>
+      <div class="projects-shell">
+        <button
+          class="projects-toggle"
+          id="projectsToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="projectsList"
+        >
+          Show All Projects ▼
+        </button>
 
-				<div class="about-card">
-					<h3>Fast Performance</h3>
-					<p>
-						Lightweight and optimized structure focused on better performance.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div class="projects-list" id="projectsList">
+          <a class="project-card" href="Project/Academic Performance/index.html">
+            <span class="badge">01</span>
+            <h3>Academic Performance</h3>
+            <p>Student performance dashboard and reports with an elegant interface.</p>
+          </a>
 
-		<!-- ABOUT MAIN -->
+          <a class="project-card" href="Project/AI Car/index.html">
+            <span class="badge">02</span>
+            <h3>AI Car</h3>
+            <p>Smart car-themed UI with futuristic visuals and interactive design.</p>
+          </a>
 
-		<main class="about-main">
-			<div class="about-main__text">
-				<p class="eyebrow">My Approach</p>
-				<h2>Clean design, strong purpose</h2>
-				<p>
-					I focus on creating simple, modern, and functional web experiences
-					that feel professional and easy to use. This section reflects my
-					growth as a frontend learner and my effort to build websites with
-					clarity, structure, and personality.
-				</p>
-			</div>
+          <a class="project-card" href="Project/Basic_CA/index.html">
+            <span class="badge">03</span>
+            <h3>Basic_CA</h3>
+            <p>Simple and clean calculator experience with professional layout.</p>
+          </a>
 
-			<div class="about-main__photo">
-				<img src="assets/My-photo.png" alt="Abhinav Singh" />
-			</div>
-		</main>
+          <a class="project-card" href="Project/BMI/index.html">
+            <span class="badge">04</span>
+            <h3>BMI</h3>
+            <p>Body mass index tracker with responsive UI and clear results.</p>
+          </a>
 
-		<!-- SERVICES SECTION -->
+          <a class="project-card" href="Project/DynamicRPG/index.html">
+            <span class="badge">05</span>
+            <h3>DynamicRPG</h3>
+            <p>Interactive RPG-style project with smooth animations and game feel.</p>
+          </a>
 
-		<section class="services">
-			<div class="section-title">
-				<h2>Our Services</h2>
-			</div>
+          <a class="project-card" href="Project/Shopping Cart/index.html">
+            <span class="badge">06</span>
+            <h3>Shopping Cart</h3>
+            <p>Modern shopping interface with product cards and smooth transitions.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-			<div class="services-container">
-				<div class="service-box">
-					<h3>Web Development</h3>
-					<p>Modern and responsive websites with clean structure.</p>
-				</div>
+    <section class="stats">
+      <div class="stat-box">
+        <h2>10+</h2>
+        <p>Projects</p>
+      </div>
+      <div class="stat-box">
+        <h2>100%</h2>
+        <p>Responsive</p>
+      </div>
+      <div class="stat-box">
+        <h2>24/7</h2>
+        <p>Support</p>
+      </div>
+      <div class="stat-box">
+        <h2>Fast</h2>
+        <p>Performance</p>
+      </div>
+    </section>
 
-				<div class="service-box">
-					<h3>UI / UX Design</h3>
-					<p>Interactive and attractive user experience design.</p>
-				</div>
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Let's build something creative together.</p>
+      </div>
 
-				<div class="service-box">
-					<h3>Dashboard Design</h3>
-					<p>Professional admin and user dashboard interfaces.</p>
-				</div>
-			</div>
-		</section>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your Email" />
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
-		<!-- STATS SECTION -->
-
-		<section class="stats">
-			<div class="stat-box">
-				<h2>10+</h2>
-				<p>Projects</p>
-			</div>
-
-			<div class="stat-box">
-				<h2>100%</h2>
-				<p>Responsive</p>
-			</div>
-
-			<div class="stat-box">
-				<h2>24/7</h2>
-				<p>Support</p>
-			</div>
-
-			<div class="stat-box">
-				<h2>Fast</h2>
-				<p>Performance</p>
-			</div>
-		</section>
-
-		<!-- CONTACT SECTION -->
-
-		<section class="contact">
-			<div class="section-title">
-				<h2>Contact Us</h2>
-				<p>Let's build something creative together.</p>
-			</div>
-
-			<form class="contact-form">
-				<input type="text" placeholder="Your Name" />
-
-				<input type="email" placeholder="Your Email" />
-
-				<textarea placeholder="Your Message"></textarea>
-
-				<button type="submit">Send Message</button>
-			</form>
-		</section>
-
-		<!-- FOOTER -->
-
-		<footer>
-			<h3>Abhinav</h3>
-
-			<p>Designed with creativity and modern web technologies.</p>
-		</footer>
-	</body>
+    <footer>
+      <h3>Abhinav</h3>
+      <p>Designed with creativity and modern web technologies.</p>
+    </footer>
+  </body>
 </html>
