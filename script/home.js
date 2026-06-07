@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const accountName = document.getElementById("accountName");
   const logoutBtn = document.getElementById("logoutBtn");
   const profilePhotoInput = document.getElementById("profilePhotoInput");
-  const removeTopAvatarBtn = document.getElementById("removeTopAvatarBtn");
+  const themeBtn = document.getElementById("theme-btn");
+  const themeIcon = document.getElementById("theme-icon");
 
   if (!currentUser) {
     window.location.replace("login.html");
@@ -25,11 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveAvatar(avatarData) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const updatedUser = { ...currentUser, avatar: avatarData };
-
-    const updatedUsers = users.map((u) =>
-      u.email === currentUser.email ? updatedUser : u
-    );
-
+    const updatedUsers = users.map((u) => (u.email === currentUser.email ? updatedUser : u));
     localStorage.setItem("users", JSON.stringify(updatedUsers));
     localStorage.setItem("currentUser", JSON.stringify(updatedUser));
     return updatedUser;
@@ -47,6 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (sidebarName) sidebarName.textContent = currentUser.name || "User";
   if (accountName) accountName.textContent = currentUser.name || "User";
 
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.body.setAttribute("data-theme", savedTheme);
+  if (themeIcon) {
+    themeIcon.className = savedTheme === "dark"
+      ? "fa-regular fa-moon"
+      : "fa-regular fa-sun";
+  }
+
   applyAvatar();
 
   profilePhotoInput?.addEventListener("change", async (e) => {
@@ -62,10 +67,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  removeTopAvatarBtn?.addEventListener("click", () => {
-    const updatedUser = saveAvatar("");
-    currentUser.avatar = updatedUser.avatar;
-    applyAvatar();
+  themeBtn?.addEventListener("click", () => {
+    const nextTheme = document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    document.body.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    if (themeIcon) {
+      themeIcon.className = nextTheme === "dark"
+        ? "fa-regular fa-moon"
+        : "fa-regular fa-sun";
+    }
   });
 
   logoutBtn?.addEventListener("click", (e) => {
