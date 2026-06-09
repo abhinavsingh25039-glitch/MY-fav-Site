@@ -33,9 +33,6 @@
             <div class="avatar-shell">
               <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
             </div>
-            <span class="avatar-overlay">
-              <i class="fa-solid fa-camera"></i>
-            </span>
           </label>
 
           <div class="sidebar-text">
@@ -64,9 +61,6 @@
               <div class="account-image">
                 <img src="assets/ID-photo.png" alt="Profile photo" loading="lazy" />
               </div>
-              <span class="avatar-overlay small">
-                <i class="fa-solid fa-camera"></i>
-              </span>
             </label>
 
             <div class="account-info">
@@ -318,22 +312,17 @@
             <div class="card-heading">
               <div>
                 <p class="eyebrow">Calendar</p>
-                <h3>July 2026</h3>
+                <h3 id="calendarMonthLabel">July 2026</h3>
+                <p class="calendar-status" id="calendarStatus">Today</p>
               </div>
               <div class="calendar-nav">
-                <button type="button" aria-label="Previous month">←</button>
-                <button type="button" aria-label="Next month">→</button>
+                <button id="prevMonthBtn" type="button" aria-label="Previous month">←</button>
+                <button id="todayMonthBtn" type="button" aria-label="Go to current month">Today</button>
+                <button id="nextMonthBtn" type="button" aria-label="Next month">→</button>
               </div>
             </div>
 
-            <div class="calendar-grid">
-              <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
-              <span>29</span><span>30</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
-              <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
-              <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-              <span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span>
-              <span class="today">27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>1</span><span>2</span>
-            </div>
+            <div class="calendar-grid" id="calendarGrid" aria-live="polite"></div>
           </article>
 
           <article class="glass-card">

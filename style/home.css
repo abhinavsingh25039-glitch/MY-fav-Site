@@ -589,74 +589,48 @@ body {
   color: var(--muted);
 }
 
-.calendar-grid span {
-  padding: 8px 0;
+.calendar-grid span,
+.calendar-cell {
   border-radius: 10px;
+  padding: 8px 0;
 }
 
-.calendar-grid .today {
+.calendar-cell {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+}
+
+.calendar-cell:hover {
+  background: #eef2ff;
+}
+
+.calendar-cell.selected {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: #fff;
+  border-color: transparent;
   font-weight: 800;
 }
 
-.notes-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.calendar-cell.today {
+  box-shadow: 0 0 0 1px rgba(108, 99, 255, 0.25);
 }
 
-.note {
-  border-radius: 18px;
-  padding: 12px;
-  border: 1px solid var(--line);
-  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.06);
+.calendar-cell.muted {
+  opacity: 0.45;
 }
 
-.note strong {
-  display: block;
-  margin-bottom: 4px;
+.calendar-grid .weekday {
   color: var(--text);
-  font-size: 14px;
+  font-weight: 700;
 }
 
-.note p,
-.note small {
+.calendar-status {
   color: var(--muted);
   font-size: 12px;
-}
-
-.note-yellow { background: #fffbea; }
-.note-blue { background: #eff6ff; }
-.note-pink { background: #fdf2f8; }
-
-.avatar-upload-zone {
-  position: relative;
-  display: inline-flex;
-  cursor: pointer;
-}
-
-.avatar-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(17, 24, 39, 0.35);
-  color: #fff;
-  border-radius: 50%;
-  opacity: 0;
-  transition: 0.2s ease;
-  font-size: 14px;
-}
-
-.avatar-upload-zone:hover .avatar-overlay,
-.avatar-upload-zone:focus-within .avatar-overlay {
-  opacity: 1;
-}
-
-.avatar-overlay.small {
-  font-size: 12px;
+  margin-top: 4px;
 }
 
 @media (max-width: 1200px) {
